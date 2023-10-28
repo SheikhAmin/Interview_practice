@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="commons-lang3-3.13.0-sources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Apache API for Random String Java/commons-lang3-3.13.0/commons-lang3-3.13.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../Apache API for Random String Java/commons-lang3-3.13.0/commons-lang3-3.13.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
