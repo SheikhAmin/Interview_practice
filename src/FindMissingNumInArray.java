@@ -13,12 +13,13 @@ public class FindMissingNumInArray {
           sum1 = sum1 + a[i];
         }
         int sum2 = 0;
-        int i=1;
-        while (i<=5){
+        int range = a[a.length-1];
+        for (int i=1;i<=range;i++){
             sum2 = sum2 + i;
-            i++;
         }
 
         System.out.println("missing value is " + (sum2 - sum1));
+
+      
     }
 }
