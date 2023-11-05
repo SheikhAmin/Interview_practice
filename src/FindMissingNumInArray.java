@@ -4,7 +4,7 @@ public class FindMissingNumInArray {
         // there can't be any duplicate value
         // values should be in range
 
-        int a[]={1,2,4,5};
+        int a[]={1,2,4,5,6,9,8};
         // given value: 1+2+4+5 = 12 which is sum1
         // as values should be in range so : 1+2+3+4+5=15 which is sum2
         // sum1-sum2 = 15-12 = 3, which is the missing value
