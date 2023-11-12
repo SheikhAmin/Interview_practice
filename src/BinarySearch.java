@@ -17,15 +17,10 @@ public class BinarySearch {
                 flag = true;
                 break;
             }
-            if (key > a[m]){
-                l = m+1;
-            }
-            if (key < a[m]){
-                h = m-1;
-            }
+            if (key > a[m])     l = m+1;
+            if (key < a[m]) h = m-1;
         }
         if (flag == false) System.out.println("element not found");
-
         //approach 2 use built in method
         //here array should be sorted
         System.out.println(Arrays.binarySearch(a,100));
