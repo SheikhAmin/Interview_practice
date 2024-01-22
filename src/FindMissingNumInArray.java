@@ -14,7 +14,8 @@ public class FindMissingNumInArray {
         }
         int sum2 = 0;
         int range = Arrays.stream(a).max().orElseThrow();
-        for (int i=1;i<=range;i++){
+        int min=Arrays.stream(a).min().orElseThrow();
+        for (int i=min;i<=range;i++){
             sum2 = sum2 + i;
         }
 
