@@ -1,9 +1,6 @@
 package Review;
 
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Task {
     public static void countTheWord(String word){
@@ -193,6 +190,70 @@ public class Task {
        }
        return stack.isEmpty();
    }
+
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        // Iterate through characters of the first string
+        // here strs[0] or strs[1] or strs[2] doesn't matter ans won't get effected
+        for (int i = 0; i < strs[0].length(); i++) {
+            char currentChar = strs[0].charAt(i);
+
+            // Check if the current character is common to all strings
+            for (int j = 1; j < strs.length; j++) {
+                if (i == strs[j].length() || strs[j].charAt(i) != currentChar) {
+                    // If the current character is not common, return the substring up to this point
+                    System.out.println("1");
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+
+        // If all characters match in the first string, return the first string itself
+        return strs[0];
+    }
+
+    public static int[] plusOne(int[] digits) {
+
+        for (int i=digits.length-1;i>=0;i--){
+            if(digits[i] < 9){
+                digits[i]++;
+                return digits;
+            }
+            else{
+                digits[i] = 0;
+            }
+        }
+        
+        int [] new_arr = new int[digits.length+1];
+        System.out.println(Arrays.toString(new_arr));
+        new_arr[0] = 1;
+        return new_arr;
+
+    }
+
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0; // Edge case: needle is empty, return 0
+
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            boolean match = true;
+            for (int j = 0; j < needle.length(); j++) {
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) return i; // Return the index of the first occurrence of needle in haystack
+        }
+
+        return -1; // Ne
+    }
+
+
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] a = {1,10,2,3,4,6,5};
@@ -218,5 +279,11 @@ public class Task {
         secondHighest(a);
         findMissingNumberInArray(ar);
         System.out.println(isValidParenthesis("1+2(2+3)"));
+        String [] val = {"flower","flow","flight"};
+        System.out.println(longestCommonPrefix(val));
+        System.out.println(strStr("hello","ll"));
+        int [] value = {9};
+        System.out.println(Arrays.toString(plusOne(value)));
+
     }
 }
