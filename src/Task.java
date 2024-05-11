@@ -95,8 +95,8 @@ public class Task {
 
    public static void fibonacci(int val){
         int n =0 , n1=1;
-       System.out.print(n +" "+ n1);
-       for (int i=2;i<val;i++){
+        System.out.print(n +" "+ n1);
+        for (int i=2;i<val;i++){
            int result = n +n1;
            System.out.print(" "+ result);
            n = n1;
@@ -116,7 +116,7 @@ public class Task {
    public static void reverseString(String str){
         String s= "";
         for (int i=str.length()-1;i>=0;i--){
-            s = s+ str.charAt(i);
+            s += str.charAt(i);
         }
        System.out.println(s);
    }
@@ -132,8 +132,7 @@ public class Task {
    }
 
    public static void secondHighest(int [] a){
-     int max1 = 0, length=0;
-     int max2 = 0;
+     int max1 = 0, max2 = 0, length=0;
      if (a[0] > a[1] ){
          max1 = a[0];
          max2 = a[1];
@@ -142,7 +141,6 @@ public class Task {
          max1 = a[1];
          max2 = a[0];
      }
-
      for (int i=2;i<a.length;i++){
          if (a[i]>max1){
              max2 = max1;
@@ -151,7 +149,6 @@ public class Task {
          if (a[i] > max2 && a[i] < max1){
              max2 = a[i];
              length = i;
-
          }
      }
        System.out.println("Second Highest number " + max2);
@@ -163,11 +160,9 @@ public class Task {
        int sum=0, sum1=0;
        for (int j : a) {
            sum += j;
-
        }
        int min = Arrays.stream(a).min().orElseThrow(NoSuchElementException::new);
        int max = Arrays.stream(a).max().orElseThrow(NoSuchElementException::new);
-
        for (int i=min;i<=max;i++){
            sum1 +=i;
        }
@@ -186,37 +181,32 @@ public class Task {
                char top = stack.pop();
                if ((c == ')' && top !='(') || (c == '}' && top !='{') || (c == ']' && top !='[')) return false;
            }
-
        }
        return stack.isEmpty();
    }
 
-    public static String longestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) {
+    public static String longestCommonPrefix(String [] str) {
+        if (str == null || str.length == 0) {
             return "";
         }
-
         // Iterate through characters of the first string
-        // here strs[0] or strs[1] or strs[2] doesn't matter ans won't get effected
-        for (int i = 0; i < strs[0].length(); i++) {
-            char currentChar = strs[0].charAt(i);
-
+        // here str[0] or str[1] or str[2] doesn't matter ans won't get effected
+        for (int i = 0; i < str[0].length(); i++) {
+            char currentChar = str[0].charAt(i);
             // Check if the current character is common to all strings
-            for (int j = 1; j < strs.length; j++) {
-                if (i == strs[j].length() || strs[j].charAt(i) != currentChar) {
+            for (int j = 1; j < str.length; j++) {
+                if (i == str[j].length() || str[j].charAt(i) != currentChar) {
                     // If the current character is not common, return the substring up to this point
                     System.out.println("1");
-                    return strs[0].substring(0, i);
+                    return str[0].substring(0, i);
                 }
             }
         }
-
         // If all characters match in the first string, return the first string itself
-        return strs[0];
+        return str[0];
     }
 
-    public static int[] plusOne(int[] digits) {
-
+    public static int [] plusOne(int [] digits) {
         for (int i=digits.length-1;i>=0;i--){
             if(digits[i] < 9){
                 digits[i]++;
@@ -226,17 +216,14 @@ public class Task {
                 digits[i] = 0;
             }
         }
-        
         int [] new_arr = new int[digits.length+1];
         System.out.println(Arrays.toString(new_arr));
         new_arr[0] = 1;
         return new_arr;
-
     }
 
     public static int strStr(String haystack, String needle) {
         if (needle.isEmpty()) return 0; // Edge case: needle is empty, return 0
-
         for (int i = 0; i <= haystack.length() - needle.length(); i++) {
             boolean match = true;
             for (int j = 0; j < needle.length(); j++) {
@@ -247,17 +234,25 @@ public class Task {
             }
             if (match) return i; // Return the index of the first occurrence of needle in haystack
         }
-
         return -1; // Ne
     }
 
 
-
+    public  static boolean containsDuplicate(int[] nums) {
+        HashSet <Integer> set = new HashSet<>();
+        int count = 1;
+        for (int num:nums){
+            if (set.contains(num)) count++;
+            else set.add(num);
+        }
+        if (count >= 2) return true;
+        return false;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] a = {1,10,2,3,4,6,5};
-        int[] ar = {1,2,3,4,6};
+        int [] a = {1,10,2,3,4,6,5};
+        int [] ar = {1,2,3,4,6};
         // System.out.println("Enter a sentence");
         // String s = sc.nextLine();
         // countTheWord(s);
@@ -266,10 +261,10 @@ public class Task {
         countCharOccurrence("I am bangladeshi","a");
         countEvenOdd(21);
         digitsOfNumber(55);
-        String[] arr = {"java","c","c++","java","python"};
+        String [] arr = {"java","c","c++","java","python"};
         duplicateElementInArray(arr);
-        int[] a1 = {1,2,3,4,5};
-        int[] a2 = {1,2,3,4,5};
+        int [] a1 = {1,2,3,1};
+        int [] a2 = {1,2,3,4,5};
         equalityCheckOfArray(a1,a2);
         evenOrOddFromArray(a1);
         fibonacci(5);
@@ -284,6 +279,7 @@ public class Task {
         System.out.println(strStr("hello","ll"));
         int [] value = {9};
         System.out.println(Arrays.toString(plusOne(value)));
+        System.out.println(containsDuplicate(a1));
 
     }
 }
