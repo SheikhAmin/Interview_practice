@@ -3,12 +3,17 @@ import java.util.Scanner;
 
 public class LargestNumber {
     public static void largest(int [] a){
-        int largest =0;
-        for (int i=0; i<a.length;i++){
-            for (int j=i+1;j<a.length;j++){
-                if(a[j] > a[i]) largest = a[j];
+        int largest =a[0];
+        /*
+        for (int i=0; i<a.length-1;i++){
+            for (int j=0;j<a.length-1;j++){
+                if(a[j] > a[j+1]) largest = a[j];
             }
         }
+        */
+         for (int i=1; i<a.length;i++){
+             if (a[i] > largest) largest = a[i];
+         }
         System.out.println("largest number is " + largest);
     };
     public static void main(String[] args) {
