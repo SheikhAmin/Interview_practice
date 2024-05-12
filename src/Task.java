@@ -249,6 +249,25 @@ public class Task {
         return false;
     }
 
+        public static int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0; // If prices array is empty, return 0
+        }
+
+        int minPrice = prices[0]; // Initialize minPrice to the first element
+        int maxProfit = 0; // Initialize maxProfit to 0
+
+        // Iterate through the prices array
+        for (int i = 1; i < prices.length; i++) {
+            // Update minPrice to the minimum of current price and minPrice
+            minPrice = Math.min(minPrice, prices[i]);
+            // Update maxProfit to the maximum of current profit and difference between current price and minPrice
+            maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+        }
+
+        return maxProfit;
+    }
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int [] a = {1,10,2,3,4,6,5};
