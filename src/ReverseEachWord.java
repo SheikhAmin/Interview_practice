@@ -18,11 +18,11 @@ public class ReverseEachWord {
         System.out.println(reverse);
         //approach 2
         String [] words = s.split(" ");
-        String reverseword = "";
+        StringBuilder reverseword = new StringBuilder();
         for (String w:words){
             StringBuilder sb= new StringBuilder(w);
             sb.reverse();
-            reverseword = reverseword+sb.toString()+" ";
+            reverseword.append(sb).append(" ");
         }
         System.out.println(reverseword);
     }

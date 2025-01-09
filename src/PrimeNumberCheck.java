@@ -2,7 +2,7 @@ public class PrimeNumberCheck {
     public static void main(String[] args) {
         // Prime number > 1
         // Which has only 2 factors 1 and itself
-        int num = 1;
+        int num = 2;
         int count = 0;
         if (num > 1){
             for (int i=1; i<=num; i++){

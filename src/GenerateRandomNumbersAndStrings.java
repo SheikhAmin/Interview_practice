@@ -1,5 +1,5 @@
 import java.util.Random;
-import org.apache.commons.lang3.RandomStringUtils;
+//import org.apache.commons.lang3.RandomStringUtils;
 public class GenerateRandomNumbersAndStrings {
     public static void main(String[] args) {
         // approach 1 --Random class
@@ -13,9 +13,9 @@ public class GenerateRandomNumbersAndStrings {
         //approach2 -Math
         System.out.println(Math.random());
         //approach3 -apache commons-lang API
-        String ranNum = RandomStringUtils.randomNumeric(5);
-        System.out.println(ranNum);
-        String ranStr = RandomStringUtils.randomAlphabetic(5);
-        System.out.println(ranStr);
+        //String ranNum = RandomStringUtils.randomNumeric(5);
+       // System.out.println(ranNum);
+       // String ranStr = RandomStringUtils.randomAlphabetic(5);
+       // System.out.println(ranStr);
     }
 }
