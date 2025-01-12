@@ -35,5 +35,9 @@ public class SecondLargestNum {
         //approach 1
         System.out.println(secondHighest(a));
 
+        //approach 2
+        Arrays.sort(a);
+        System.out.println(a[a.length-2]);
+
     }
 }
